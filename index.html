@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="szamologep">
+        <div id="kijelzo"></div>
+        <div id="gombok"></div>
+    </div>
+
+    <script>
+        let kijelzo = document.getElementById('kijelzo');
+        
+        let gomb_tarolo = document.getElementById('gombok');
+        gomb_tarolo.innerHTML = '<button onclick="kattintas(7)">7</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(8)">8</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(9)">9</button>';
+        gomb_tarolo.innerHTML += '<button onclick="osztas()">/</button>';
+
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(4)">4</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(5)">5</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(6)">6</button>';
+        gomb_tarolo.innerHTML += '<button onclick="szorzas()">*</button>';
+
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(1)">1</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(2)">2</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(3)">3</button>';
+        gomb_tarolo.innerHTML += '<button onclick="kivonas()">-</button>';
+
+        gomb_tarolo.innerHTML += '<button onclick="kattintas(0)">0</button>';
+        gomb_tarolo.innerHTML += '<button>ON/OFF</button>';
+        gomb_tarolo.innerHTML += '<button onclick="egyenlo()">=</button>';
+        gomb_tarolo.innerHTML += '<button onclick="osszeadas()">+</button>';
+
+        function kattintas(szam){
+            kijelzo.innerHTML += szam
+        }
+
+        let elso;
+        let muvelet;
+        let masodik;
+
+        function osszeadas(){
+            elso = kijelzo.innerHTML;
+            muvelet = "+";
+            kijelzo.innerHTML = "";
+        }
+
+        function kivonas(){
+            elso = kijelzo.innerHTML;
+            muvelet = "-";
+            kijelzo.innerHTML = "";
+        }
+
+        function szorzas(){
+            elso = kijelzo.innerHTML;
+            muvelet = "*";
+            kijelzo.innerHTML = "";
+        }
+
+        function osztas(){
+            elso = kijelzo.innerHTML;
+            muvelet = "/";
+            kijelzo.innerHTML = "";
+        }
+
+        function egyenlo(){
+            masodik = kijelzo.innerHTML;
+
+            if(muvelet == "+"){
+                kijelzo.innerHTML = (elso*1) + (masodik*1);
+            }
+            else if (muvelet == "-"){
+                kijelzo.innerHTML = (elso*1) - (masodik*1);
+            }
+            else if (muvelet == "*"){
+                kijelzo.innerHTML = (elso*1) * (masodik*1);
+            }
+            else if (muvelet == "/"){
+                kijelzo.innerHTML = (elso*1) / (masodik*1);
+            }
+        }
+    </script>
+</body>
+</html>

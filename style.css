@@ -1,0 +1,31 @@
+#szamologep {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background-color: lightgray;
+    padding-top: 50px;
+}
+#kijelzo {
+    width: 90%;
+    height: 100px;
+    background: darkgreen;
+    margin: auto;
+    color: white;
+    font-size: 3em;
+    line-height: 100px;
+    font-weight: bold;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+#gombok {
+    width: 90%;
+    height: 400px;
+    background-color: lightgray;
+    margin: auto;
+    padding-top: 15px;
+}
+#gombok button {
+    width: 25%;
+    height: 100px;
+}
